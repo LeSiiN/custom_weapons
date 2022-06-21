@@ -9,7 +9,7 @@ This is a FREE release.. thats not my models.. credits goes to the Model maker..
 - Images for every gun
 
 ## Installation
-
+- URL: https://www.mediafire.com/file/swmvsrtboxfbtxj/Custom_Weapons_by_LeSiiN.zip/file
 - Put the ``[custom_weapons]`` into your ``resource`` folder.
 - Drop first code in ``items.lua`` in qb-core
 
