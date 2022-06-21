@@ -13,6 +13,8 @@ This is a FREE release.. thats not my models.. credits goes to the Model maker..
 - Put the ``[custom_weapons]`` into your ``resource`` folder.
 - Drop first code in ``items.lua`` in qb-core
 
+```lua
+
 		-- Custom Weapons
 	['weapon_ak47'] 		 = {['name'] = 'weapon_ak47', 	 	  	['label'] = 'AK-47', 			['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_assaultrifle.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,["decay"] = 30.0,     	['description'] = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use'},
 	['weapon_de'] 			 = {['name'] = 'weapon_de', 		 	  	['label'] = 'Desert Eagle', 			    ['weight'] = 8000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'deagle.png', 		['unique'] = true, 		['useable'] = false,["created"] = nil,["decay"] = 30.0,     	['description'] = 'A .50 caliber firearm designed to be held with both hands'},
@@ -31,10 +33,11 @@ This is a FREE release.. thats not my models.. credits goes to the Model maker..
 	['weapon_ar15'] 		 = {['name'] = 'weapon_ar15', 	 	  	['label'] = 'PD AR-15', 			['weight'] = 13000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_mcx.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,["decay"] = 30.0,     	['description'] = 'A lightweight automatic rifle for the Police'},
 	['weapon_mk14'] 		 = {['name'] = 'weapon_mk14', 	 	  	['label'] = 'PD MK14', 			['weight'] = 23000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_SNIPER',			['image'] = 'mk14.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,["decay"] = 30.0,     	['description'] = 'A very accurate single-fire rifle'},
 	['weapon_huntingrifle'] 		 = {['name'] = 'weapon_huntingrifle', 	 	  	['label'] = 'Hunting Rifle', 			['weight'] = 23000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_SNIPER',			['image'] = 'huntingrifle.png', 	['unique'] = true, 		['useable'] = false,["created"] = nil,["decay"] = 30.0,     	['description'] = 'A very accurate Rifle for hunting'},
+```
 
-- Drop the next code in ``weapons.lua`` in qb-core
+## Drop the next code in ``weapons.lua`` in qb-core
 
-	--CUSTOM WEAPON
+```lua
 	[`weapon_ak47`] 		 = {['name'] = 'weapon_ak47', 	 	['label'] = 'AK-47', 				['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 	[`weapon_m70`] 		 = {['name'] = 'weapon_m70', 	 	['label'] = 'M70', 				['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 	[`weapon_de`] 			 = {['name'] = 'weapon_de', 		['label'] = 'Desert Eagle', 			['ammotype'] = 'AMMO_PISTOL',	['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
@@ -52,9 +55,11 @@ This is a FREE release.. thats not my models.. credits goes to the Model maker..
 	[`weapon_ar15`] 		 = {['name'] = 'weapon_ar15', 	 	['label'] = 'PD AR-15', 				['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 	[`weapon_mk14`] 		 = {['name'] = 'weapon_mk14', 	 	['label'] = 'PD MK14', 				['ammotype'] = 'AMMO_SNIPER',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
 	[`weapon_huntingrifle`] 		 = {['name'] = 'weapon_huntingrifle', 	 	['label'] = 'Hunting Rifle', 				['ammotype'] = 'AMMO_SNIPER',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
+```
 
-- Drop the next code in ``config.lua`` in qb-weapons
+## Drop the next code in ``config.lua`` in qb-weapons
 
+```lua
     --Custom Weapons
     ['weapon_ak47'] 			    = 0.15,
 	['weapon_de'] 	                = 0.15,
@@ -73,9 +78,10 @@ This is a FREE release.. thats not my models.. credits goes to the Model maker..
     ['weapon_remington'] 		    = 0.15,
     ['weapon_scarh'] 			    = 0.15,
 	['weapon_shiv'] 	            = 0.15,
+```
+## Drop the next code in ``config.lua`` in qb-weapons (about line 209)
 
-- Drop the next code in ``config.lua`` in qb-weapons (about line 209)
-
+```lua
     ['WEAPON_M9'] = {
         ['defaultclip'] = {
             component = 'COMPONENT_M9_CLIP_01',
@@ -172,10 +178,12 @@ This is a FREE release.. thats not my models.. credits goes to the Model maker..
             component = 'COMPONENT_AT_AR_SUPP_02',
             item = 'rifle_suppressor',
         },
-    },	
+    },
+```
 
-- Replace the next code in ``weapdraw.lua`` in qb-smallresources
+## Replace the next code in ``weapdraw.lua`` in qb-smallresources
 
+```lua
 local weapons = {
 	'WEAPON_KNIFE',
 	'WEAPON_NIGHTSTICK',
@@ -267,7 +275,7 @@ local weapons = {
 	'WEAPON_SCARH',
 	'WEAPON_SHIV',
 }
--- Wheapons that require the Police holster animation
+--Weapons that require the Police holster animation
 local holsterableWeapons = {
 	--'WEAPON_STUNGUN',
 	'WEAPON_PISTOL',
@@ -286,9 +294,11 @@ local holsterableWeapons = {
 	'WEAPON_M1911',
 	'WEAPON_FNX45',
 }
-    
-- Drop the next code in ``recoil.lua`` in qb-smallresources ( LINE 107 )
+```
 
+## Drop the next code in ``recoil.lua`` in qb-smallresources ( LINE 107 )
+
+```lua
 		-- CUSTOM WEAPONS
 	[GetHashKey("weapon_ak47")] = 0.5,
 	[GetHashKey("weapon_de")] = 0.5,
@@ -306,9 +316,10 @@ local holsterableWeapons = {
 	[GetHashKey("weapon_mossberg")] = 0.7,
 	[GetHashKey("weapon_remington")] = 0.7,
 	[GetHashKey("weapon_scarh")] = 0.5,
-        
-- Replace the next code in ``config.lua`` in qb-jewelery
+```     
+## Replace the next code in ``config.lua`` in qb-jewelery
 
+```lua
 Config.WhitelistedWeapons = {
     [`weapon_assaultrifle`] = {
         ["timeOut"] = 10000
@@ -389,9 +400,10 @@ Config.WhitelistedWeapons = {
         ["timeOut"] = 10000
     },
 }
-        
-- Replace the next code in ``config.lua`` in qb-ambulancejob
+```
+## Replace the next code in ``config.lua`` in qb-ambulancejob
 
+```lua
     [`WEAPON_DE`] = Config.WeaponClasses['MEDIUM_CALIBER'],
     [`WEAPON_M4`] = Config.WeaponClasses['MEDIUM_CALIBER'],
     [`WEAPON_AR15`] = Config.WeaponClasses['MEDIUM_CALIBER'],
@@ -409,10 +421,11 @@ Config.WhitelistedWeapons = {
     [`WEAPON_SHIV`] = Config.WeaponClasses['HEAVY_IMPACT'],
     [`WEAPON_MK14`] = Config.WeaponClasses['HIGH_CALIBER'],
     [`WEAPON_HUNTINGRIFLE`] = Config.WeaponClasses['HIGH_CALIBER'],
+```
 
-        
-- (OPTIONAL) Thats my Police Shop, u can just copy the Guns out
+## (OPTIONAL) Thats my Police Shop, u can just copy the Guns out
 
+```lua
 Config.Items = {
     label = "Police Armory",
     slots = 30,
@@ -678,9 +691,9 @@ Config.Items = {
         },
     }
 }
+```
 
-------------------------------------------------------------------------------------
-This is a FREE release.. thats not my models.. credits goes to the Model maker.. and credits to Xandrice for helping me out a little
-This is a FREE release.. thats not my models.. credits goes to the Model maker.. and credits to Xandrice for helping me out a little
-This is a FREE release.. thats not my models.. credits goes to the Model maker.. and credits to Xandrice for helping me out a little
-This is a FREE release.. thats not my models.. credits goes to the Model maker.. and credits to Xandrice for helping me out a little
+## This is a FREE release.. thats not my models.. credits goes to the Model maker.. and credits to Xandrice for helping me out a little
+## This is a FREE release.. thats not my models.. credits goes to the Model maker.. and credits to Xandrice for helping me out a little
+## This is a FREE release.. thats not my models.. credits goes to the Model maker.. and credits to Xandrice for helping me out a little
+## This is a FREE release.. thats not my models.. credits goes to the Model maker.. and credits to Xandrice for helping me out a little
